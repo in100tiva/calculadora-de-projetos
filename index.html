@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Cálculo de Custo por Hora e Projeto</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <h2>Cálculo de Custo por Hora</h2>
+    <div>
+      <label for="monthlyCosts">Custos Mensais:</label>
+      <input type="number" id="monthlyCosts" placeholder="Insira seus custos mensais">
+
+      <label for="desiredSalary">Salário Líquido Desejado por Mês:</label>
+      <input type="number" id="desiredSalary" placeholder="Insira o salário desejado">
+
+      <label for="hoursPerDay">Horas Trabalhadas por Dia:</label>
+      <input type="number" id="hoursPerDay" placeholder="Horas por dia">
+
+      <label for="daysPerWeek">Dias Trabalhados por Semana:</label>
+      <input type="number" id="daysPerWeek" placeholder="Dias por semana">
+
+      <label for="vacationWeeks">Semanas de Férias por Ano:</label>
+      <input type="number" id="vacationWeeks" placeholder="Semanas de férias">
+
+      <button onclick="calculateHourlyRate()">Calcular Custo por Hora</button>
+      <h3>Custo por Hora: <span id="hourlyRateResult">-</span></h3>
+    </div>
+
+    <h2>Cálculo do Custo do Projeto</h2>
+    <div>
+      <label for="projectHoursPerDay">Horas Trabalhadas por Dia no Projeto:</label>
+      <input type="number" id="projectHoursPerDay" placeholder="Horas por dia no projeto">
+
+      <label for="totalProjectDays">Total de Dias Trabalhados no Projeto:</label>
+      <input type="number" id="totalProjectDays" placeholder="Total de dias no projeto">
+
+      <button onclick="calculateProjectCost()">Calcular Custo do Projeto</button>
+      <h3>Custo do Projeto: <span id="projectCostResult">-</span></h3>
+    </div>
+
+
+  </body>
+
+</html>
