@@ -5,25 +5,32 @@ body {
     color: #f9f9f9;
     padding: 20px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
 }
 
 h2 {
     color: #ffa500;
     border-bottom: 2px solid #ffa500;
     padding-bottom: 10px;
+    margin-bottom: 20px; /* Aumentado o espaço abaixo dos títulos */
 }
 
 label {
     color: #f9f9f9;
     margin-top: 20px;
+    margin-bottom: 5px; /* Espaço antes do input */
 }
 
 input, button {
     display: block;
-    width: 100%;
-    max-width: 300px;
+    width: calc(100% - 40px); /* Ajusta a largura menos as margens internas */
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 5px; /* Espaço após cada input ou botão */
+    margin-bottom: 15px; /* Espaço abaixo de cada input ou botão */
     background: #444;
     border: 1px solid #555;
     color: #fff;
@@ -54,6 +61,12 @@ div {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 30px; /* Espaço entre as seções */
+    display: flex; /* Usando Flexbox */
+    flex-direction: column; /* Alinhamento vertical */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
 h3 {
