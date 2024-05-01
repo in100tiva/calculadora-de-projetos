@@ -10,6 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: center;
+    min-width: 375px; /* Largura mínima para a aplicação */
 }
 
 h2 {
@@ -79,30 +80,27 @@ span {
 
 /* Responsividade */
 @media (min-width: 768px) {
-    /* Tablets e desktops */
     div {
-        max-width: 480px; /* Aumento do max-width para mais espaço em tablets */
+        max-width: 480px;
     }
 }
 
 @media (min-width: 1024px) {
-    /* Desktops */
     div {
-        max-width: 600px; /* Aumento do max-width para mais espaço em desktops */
+        max-width: 600px;
     }
 
     body {
-        padding: 40px; /* Mais padding no corpo para desktop */
+        padding: 40px;
     }
 }
 
 @media (max-width: 767px) {
-    /* Mobile */
     div {
-        padding: 15px; /* Menos padding nas divs para maximizar o espaço */
+        padding: 15px;
     }
 
     input, button {
-        width: calc(100% - 30px); /* Menor largura para melhor ajuste */
+        width: calc(100% - 30px);
     }
 }
