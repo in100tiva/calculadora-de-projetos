@@ -10,7 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: center;
-    min-width: 375px; /* Largura mínima para a aplicação */
+    min-width: 320px; /* Largura mínima ajustada para 320px */
 }
 
 h2 {
