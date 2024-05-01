@@ -48,12 +48,18 @@ button {
     color: #333;
     font-weight: bold;
     border: none;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.1s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 button:hover {
     background-color: #ff8c00;
     color: #fff;
+}
+
+button:active {
+    transform: scale(0.98); /* Ligeira compressão quando clicado */
 }
 
 div {
