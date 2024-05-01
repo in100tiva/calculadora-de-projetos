@@ -10,14 +10,11 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: center;
-    min-width: 320px; /* Largura mínima ajustada para 320px */
+    min-width: 320px;
 }
 
-h2 {
-    color: #ffa500;
-    border-bottom: 2px solid #ffa500;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+h2, h3 {
+    color: #FFA500;
 }
 
 label {
@@ -59,7 +56,7 @@ button:hover {
 }
 
 button:active {
-    transform: scale(0.98); /* Ligeira compressão quando clicado */
+    transform: scale(0.98);
 }
 
 div {
@@ -73,15 +70,6 @@ div {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h3 {
-    margin-top: 20px;
-    color: #ffa500;
-}
-
-span {
-    font-weight: bold;
 }
 
 /* Responsividade */
@@ -103,10 +91,4 @@ span {
 
 @media (max-width: 767px) {
     div {
-        padding: 15px;
-    }
-
-    input, button {
-        width: calc(100% - 30px);
-    }
-}
+        padding: 15px

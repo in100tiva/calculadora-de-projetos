@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Ajuste na meta tag viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cálculo de Custo por Hora e Projeto</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="./index.js" defer=""></script>
@@ -14,19 +14,22 @@
     <h2>Cálculo de Custo por Hora</h2>
     <div>
       <label for="monthlyCosts">Custos Mensais:</label>
-      <input type="number" id="monthlyCosts" placeholder="Insira seus custos mensais">
+      <input type="number" id="monthlyCosts" placeholder="Insira seus custos mensais" aria-label="Custos Mensais">
 
       <label for="desiredSalary">Salário Líquido Desejado por Mês:</label>
-      <input type="number" id="desiredSalary" placeholder="Insira o salário desejado">
+      <input type="number" id="desiredSalary" placeholder="Insira o salário desejado" aria-label="Salário Líquido Desejado por Mês">
 
       <label for="hoursPerDay">Horas Trabalhadas por Dia:</label>
-      <input type="number" id="hoursPerDay" placeholder="Horas por dia">
+      <input type="range" id="hoursPerDay" min="1" max="24" value="8" oninput="updateValues(); displayValue('hoursPerDayValue', this.value + ' horas');">
+      <span id="hoursPerDayValue">8 horas</span>
 
       <label for="daysPerWeek">Dias Trabalhados por Semana:</label>
-      <input type="number" id="daysPerWeek" placeholder="Dias por semana">
+      <input type="range" id="daysPerWeek" min="1" max="7" value="5" oninput="updateValues(); displayValue('daysPerWeekValue', this.value + ' dias');">
+      <span id="daysPerWeekValue">5 dias</span>
 
       <label for="vacationWeeks">Semanas de Férias por Ano:</label>
-      <input type="number" id="vacationWeeks" placeholder="Semanas de férias">
+      <input type="range" id="vacationWeeks" min="0" max="52" value="4" oninput="updateValues(); displayValue('vacationWeeksValue', this.value + ' semanas');">
+      <span id="vacationWeeksValue">4 semanas</span>
 
       <button onclick="calculateHourlyRate()">Calcular Custo por Hora</button>
       <h3>Custo por Hora: <span id="hourlyRateResult">-</span></h3>
@@ -35,14 +38,15 @@
     <h2>Cálculo do Custo do Projeto</h2>
     <div>
       <label for="projectHoursPerDay">Horas Trabalhadas por Dia no Projeto:</label>
-      <input type="number" id="projectHoursPerDay" placeholder="Horas por dia no projeto">
+      <input type="number" id="projectHoursPerDay" placeholder="Horas por dia no projeto" aria-label="Horas Trabalhadas por Dia no Projeto">
 
       <label for="totalProjectDays">Total de Dias Trabalhados no Projeto:</label>
-      <input type="number" id="totalProjectDays" placeholder="Total de dias no projeto">
+      <input type="number" id="totalProjectDays" placeholder="Total de dias no projeto" aria-label="Total de Dias Trabalhados no Projeto">
 
       <button onclick="calculateProjectCost()">Calcular Custo do Projeto</button>
       <h3>Custo do Projeto: <span id="projectCostResult">-</span></h3>
     </div>
+    <script src="scripts.js"></script>
 
 
   </body>
