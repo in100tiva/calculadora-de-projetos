@@ -5,6 +5,12 @@ function calculateHourlyRate() {
     const daysPerWeek = parseFloat(document.getElementById('daysPerWeek').value);
     const vacationWeeks = parseFloat(document.getElementById('vacationWeeks').value);
 
+    // Validação de inputs
+    if (monthlyCosts < 0 || desiredSalary < 0 || hoursPerDay <= 0 || daysPerWeek <= 0 || daysPerWeek > 7 || vacationWeeks < 0 || vacationWeeks > 52) {
+        alert("Por favor, insira valores válidos para todos os campos.");
+        return;
+    }
+
     const weeksWorkedPerYear = 52 - vacationWeeks;
     const totalWorkHoursPerYear = hoursPerDay * daysPerWeek * weeksWorkedPerYear;
     const totalAnnualCosts = monthlyCosts * 12 + desiredSalary * 12;
@@ -17,11 +23,11 @@ function calculateHourlyRate() {
 function calculateProjectCost() {
     const projectHoursPerDay = parseFloat(document.getElementById('projectHoursPerDay').value);
     const duration = parseFloat(document.getElementById('projectDuration').value);
-    const hourlyRate = calculateHourlyRate();
+    const hourlyRate = calculateHourlyRate();  // Recalcula com a validação da função acima
 
     let totalDays;
     if (document.getElementById('timeOption').value === 'months') {
-        totalDays = duration * 30; // Assuming 30 days per month for months to days conversion
+        totalDays = duration * 30; // Considerando 30 dias por mês para conversão
     } else {
         totalDays = duration;
     }
@@ -47,7 +53,7 @@ function updateDurationSlider() {
         durationLabel.textContent = 'Duração do Projeto em Meses:';
     }
     displayValue('projectDurationValue', durationSlider.value + (timeOption === 'months' ? ' meses' : ' dias'));
-    calculateProjectCost(); // Recalculates the project cost when duration is adjusted
+    calculateProjectCost(); // Recalcula o custo do projeto quando a duração é ajustada
 }
 
 function displayValue(elementId, value) {
@@ -62,17 +68,17 @@ document.getElementById('projectHoursPerDay').addEventListener('input', function
 document.getElementById('hoursPerDay').addEventListener('input', function() {
     displayValue('hoursPerDayValue', this.value + ' horas');
     calculateHourlyRate();
-    calculateProjectCost(); // Ensure project cost recalculates when hourly related data changes
+    calculateProjectCost(); // Garante recálculo do custo do projeto quando dados relacionados à hora mudam
 });
 document.getElementById('daysPerWeek').addEventListener('input', function() {
     displayValue('daysPerWeekValue', this.value + ' dias');
     calculateHourlyRate();
-    calculateProjectCost(); // Ensure project cost recalculates when hourly related data changes
+    calculateProjectCost(); // Garante recálculo do custo do projeto quando dados relacionados à hora mudam
 });
 document.getElementById('vacationWeeks').addEventListener('input', function() {
     displayValue('vacationWeeksValue', this.value + ' semanas');
     calculateHourlyRate();
-    calculateProjectCost(); // Ensure project cost recalculates when hourly related data changes
+    calculateProjectCost(); // Garante recálculo do custo do projeto quando dados relacionados à hora mudam
 });
 document.getElementById('projectDuration').addEventListener('input', function() {
     let durationType = document.getElementById('timeOption').value === 'months' ? ' meses' : ' dias';
@@ -83,5 +89,5 @@ document.getElementById('projectDuration').addEventListener('input', function() 
 window.onload = function() {
     updateDurationSlider();
     calculateProjectCost();
-    calculateHourlyRate(); // Initial calculation on page load
+    calculateHourlyRate(); // Cálculo inicial ao carregar a página
 }
