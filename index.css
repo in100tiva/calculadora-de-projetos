@@ -42,7 +42,7 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="number"], input[type="range"] {
+input[type="number"], input[type="range"], select {
     display: block;
     width: calc(100% - 40px);
     padding: 10px;
@@ -52,6 +52,7 @@ input[type="number"], input[type="range"] {
     border: 1px solid var(--input-border-color);
     color: var(--text-color);
     border-radius: 5px;
+    outline: none; /* Remove the default focus outline */
 }
 
 input[type="range"] {
@@ -73,11 +74,17 @@ button {
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: var(--default-margin);
+    outline: none;
 }
 
 button:hover {
     background-color: var(--button-hover-color);
     color: var(--text-color);
+}
+
+button:focus, input[type="number"]:focus, input[type="range"]:focus, select:focus {
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 3px var(--highlight-color);
 }
 
 button:active {
