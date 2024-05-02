@@ -38,10 +38,18 @@
     <h2>Cálculo do Custo do Projeto</h2>
     <div>
       <label for="projectHoursPerDay">Horas Trabalhadas por Dia no Projeto:</label>
-      <input type="number" id="projectHoursPerDay" placeholder="Horas por dia no projeto" aria-label="Horas Trabalhadas por Dia no Projeto">
+      <input type="range" id="projectHoursPerDay" min="1" max="24" value="8" oninput="displayValue('projectHoursPerDayValue', this.value + ' horas'); calculateProjectCost();">
+      <span id="projectHoursPerDayValue">8 horas</span>
 
-      <label for="totalProjectDays">Total de Dias Trabalhados no Projeto:</label>
-      <input type="number" id="totalProjectDays" placeholder="Total de dias no projeto" aria-label="Total de Dias Trabalhados no Projeto">
+      <label for="timeOption">Selecione a Duração:</label>
+      <select id="timeOption" onchange="updateDurationSlider()">
+        <option value="days">Dias</option>
+        <option value="months">Meses</option>
+      </select>
+
+      <label id="durationLabel" for="projectDuration">Duração do Projeto em Dias:</label>
+      <input type="range" id="projectDuration" min="1" max="30" value="5" oninput="displayValue('projectDurationValue', this.value + (document.getElementById('timeOption').value === 'months' ? ' meses' : ' dias')); calculateProjectCost();">
+      <span id="projectDurationValue">5 dias</span>
 
       <button onclick="calculateProjectCost()">Calcular Custo do Projeto</button>
       <h3>Custo do Projeto: <span id="projectCostResult">-</span></h3>
