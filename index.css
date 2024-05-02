@@ -1,9 +1,25 @@
-/* Estilo Base */
+:root {
+    /* Cores */
+    --primary-color: #333;           /* Cor de fundo principal */
+    --text-color: #f9f9f9;           /* Cor do texto */
+    --highlight-color: #FFA500;      /* Cor para destaques e interações */
+    --button-hover-color: #ff8c00;   /* Cor de hover do botão */
+    --input-background: #444;        /* Cor de fundo dos inputs */
+    --input-border-color: #555;      /* Cor da borda dos inputs */
+    --container-background: #222;    /* Cor de fundo dos containers */
+
+    /* Espaçamentos */
+    --default-padding: 20px;         /* Padding padrão */
+    --default-margin: 20px;          /* Margin padrão */
+    --input-margin: 15px;            /* Margin dos inputs */
+    --section-margin: 30px;          /* Margin entre seções */
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #333;
-    color: #f9f9f9;
-    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: var(--default-padding);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -14,15 +30,15 @@ body {
 }
 
 h2 {
-    color: #FFA500;
-    border-bottom: 2px solid #FFA500;
+    color: var(--highlight-color);
+    border-bottom: 2px solid var(--highlight-color);
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: var(--default-margin);
 }
 
 label {
-    color: #f9f9f9;
-    margin-top: 20px;
+    color: var(--text-color);
+    margin-top: var(--default-margin);
     margin-bottom: 5px;
 }
 
@@ -31,16 +47,16 @@ input[type="number"], input[type="range"] {
     width: calc(100% - 40px);
     padding: 10px;
     margin-top: 5px;
-    margin-bottom: 15px;
-    background: #444;
-    border: 1px solid #555;
-    color: #fff;
+    margin-bottom: var(--input-margin);
+    background: var(--input-background);
+    border: 1px solid var(--input-border-color);
+    color: var(--text-color);
     border-radius: 5px;
 }
 
 input[type="range"] {
-    background: #444; /* Fundo do slider */
-    outline: none; /* Remove a linha de foco */
+    background: var(--input-background);
+    outline: none;
 }
 
 input[type="number"]::placeholder, input[type="range"]::placeholder {
@@ -49,19 +65,19 @@ input[type="number"]::placeholder, input[type="range"]::placeholder {
 
 button {
     cursor: pointer;
-    background-color: #ffa500;
-    color: #333;
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
     font-weight: bold;
     border: none;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.1s ease;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 20px; /* Margem superior adicionada */
+    margin-top: var(--default-margin);
 }
 
 button:hover {
-    background-color: #ff8c00;
-    color: #fff;
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
 }
 
 button:active {
@@ -69,28 +85,27 @@ button:active {
 }
 
 div {
-    background-color: #222;
-    padding: 20px;
+    background-color: var(--container-background);
+    padding: var(--default-padding);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 360px;
-    margin-bottom: 30px;
+    margin-bottom: var(--section-margin);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 span {
-    color: #FFA500;
+    color: var(--highlight-color);
 }
 
 h3 {
-    margin-top: 20px;
-    color: #FFA500;
+    margin-top: var(--default-margin);
+    color: var(--highlight-color);
 }
 
-/* Responsividade */
 @media (min-width: 768px) {
     div {
         max-width: 480px;

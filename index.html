@@ -24,14 +24,11 @@
       <label for="hoursPerDay">Horas Trabalhadas por Dia: <span id="hoursPerDayValue">8 horas</span> </label>
       <input type="range" id="hoursPerDay" min="1" max="24" value="8" oninput="updateValues(); displayValue('hoursPerDayValue', this.value + ' horas');">
 
-
       <label for="daysPerWeek">Dias Trabalhados por Semana: <span id="daysPerWeekValue">5 dias</span></label>
       <input type="range" id="daysPerWeek" min="1" max="7" value="5" oninput="updateValues(); displayValue('daysPerWeekValue', this.value + ' dias');">
 
-
       <label for="vacationWeeks">Semanas de Férias por Ano: <span id="vacationWeeksValue">4 semanas</span> </label>
       <input type="range" id="vacationWeeks" min="0" max="52" value="4" oninput="updateValues(); displayValue('vacationWeeksValue', this.value + ' semanas');">
-
 
       <button onclick="calculateHourlyRate()">Calcular Custo por Hora</button>
       <h3>Custo por Hora: <span id="hourlyRateResult">-</span></h3>
@@ -41,7 +38,6 @@
     <div>
       <label for="projectHoursPerDay">Horas Trabalhadas por Dia no Projeto: <span id="projectHoursPerDayValue">8 horas</span> </label>
       <input type="range" id="projectHoursPerDay" min="1" max="24" value="8" oninput="displayValue('projectHoursPerDayValue', this.value + ' horas'); calculateProjectCost();">
-
 
       <label for="timeOption">Selecione a Duração:</label>
       <select id="timeOption" onchange="updateDurationSlider()">
@@ -57,7 +53,6 @@
       <h3>Custo do Projeto: <span id="projectCostResult">-</span></h3>
     </div>
     <script src="scripts.js"></script>
-
 
 
 
