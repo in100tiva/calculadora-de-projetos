@@ -52,16 +52,11 @@ input[type="number"], input[type="range"], select {
     border: 1px solid var(--input-border-color);
     color: var(--text-color);
     border-radius: 5px;
-    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adicionando sombra sutil */
 }
 
 input[type="range"] {
-    background: var(--input-background);
-    outline: none;
-}
-
-input[type="number"]::placeholder, input[type="range"]::placeholder {
-    color: #ccc;
+    background: linear-gradient(to right, var(--input-background), var(--highlight-color)); /* Gradiente no slider */
 }
 
 button {
@@ -74,7 +69,7 @@ button {
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: var(--default-margin);
-    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra no botão */
 }
 
 button:hover {
@@ -82,20 +77,11 @@ button:hover {
     color: var(--text-color);
 }
 
-button:focus, input[type="number"]:focus, input[type="range"]:focus, select:focus {
-    border-color: var(--highlight-color);
-    box-shadow: 0 0 3px var(--highlight-color);
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
 div {
     background-color: var(--container-background);
     padding: var(--default-padding);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25); /* Sombra mais proeminente nos containers */
     width: 100%;
     max-width: 360px;
     margin-bottom: var(--section-margin);
