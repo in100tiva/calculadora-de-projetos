@@ -91,3 +91,15 @@ window.onload = function() {
     calculateProjectCost();
     calculateHourlyRate(); // Cálculo inicial ao carregar a página
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.createElement('button');
+    toggleButton.className = 'button-toggle';
+    toggleButton.textContent = 'Switch to Dark Theme'; // Texto inicial
+    document.body.appendChild(toggleButton);
+
+    toggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+    });
+});
